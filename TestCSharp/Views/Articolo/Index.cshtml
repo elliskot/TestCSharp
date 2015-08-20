@@ -38,11 +38,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Descrizione)
         </td>
-        <td class="button-action xl">
-            @*<a href="~/Articolo/Edit?ID=@item.ID&BackUrl=/Articolo" title="Modifica"><div class="btn btn-large btn-info"><i class="icon-search"></i></div></a>
-            <a href="~/Articolo/Delete?ID=@item.ID&BackUrl=/Articolo" onclick="if(!confirm('Eliminare l'articolo?')) return false;" title="Elimina l'articolo"><div class="btn btn-large btn-danger"><i class="icon-remove"></i></div></a>*@
+        <td>
             <a href="~/Articolo/Edit?ID=@item.ID&BackUrl=/Articolo" title="Modifica">Modifica</a>
+            <a href="~/Movimento/Create?ArticoloID=@item.ID&BackUrl=/Articolo" title="Movimenta Articolo">Movimenta Articolo</a>
+@if(item.Movimenti.Count == 0) {
             <a href="~/Articolo/Delete?ID=@item.ID&BackUrl=/Articolo" onclick="if(!confirm('Eliminare l'articolo?')) return false;" title="Elimina l'articolo">Elimina</a>
+}
         </td>
     </tr>
 }

@@ -18,8 +18,8 @@ namespace TestCSharp.Controllers
 
         public ActionResult Index()
         {
-            IQueryable<Articolo> oQuery = _oArticoloRepo.GetAllSimpleList();
-            List<Articolo> oList = oQuery.ToList();
+            IQueryable<Articolo> oQuery = _oArticoloRepo.GetAll();
+            List<Articolo> oList = oQuery.OrderBy(x => x.Codice).ToList();
             return View(oList);
         }
 
