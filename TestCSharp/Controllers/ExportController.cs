@@ -33,7 +33,7 @@ namespace TestCSharp.Controllers
             return Json(oList, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Magazzini()
+        public JsonResult MagazziniJson()
         {
             IQueryable<Magazzino> oQuery = _oMagazzinoRepo.GetAllSimpleList();
             List<MagazzinoExport> oList = oQuery.Select(x => new MagazzinoExport
@@ -45,7 +45,7 @@ namespace TestCSharp.Controllers
             return Json(oList, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Movimenti(int ArticoloID)
+        public JsonResult MovimentiJson(int ArticoloID)
         {
             IQueryable<Movimento> oQuery = _oMovimentoRepo.GetAll().Where(x => x.ArticoloID == ArticoloID);
             List<MovimentoExport> oList = oQuery.Select(x => new MovimentoExport
@@ -118,6 +118,37 @@ namespace TestCSharp.Controllers
             //                     }).ToList();
             //}
             //return Reporting.CsvHelper.ResponseCsv<Models.ViewModels.PartecipanteCsv>(oPartecipanti, "partecipanti_" + oCorso.Codice + ".csv", ";", true);
+        }
+
+        public FileStreamResult MagazziniCsv()
+        {
+            IQueryable<Magazzino> oQuery = _oMagazzinoRepo.GetAllSimpleList();
+            List<MagazzinoExport> oList = oQuery.Select(x => new MagazzinoExport
+            {
+                id = x.ID,
+                cod = x.Codice,
+                des = x.Descrizione,
+            }).OrderBy(x => x.cod).ToList();
+
+            return Reporting.CsvHelper.ResponseCsv<MagazzinoExport>(oList, "magazzini.csv", ";", true);
+        }
+
+        public FileStreamResult MovimentiCsv(int ArticoloID, string CodiceArticolo)
+        {
+            IQueryable<Movimento> oQuery = _oMovimentoRepo.GetAll().Where(x => x.ArticoloID == ArticoloID);
+            List<MovimentoExport> oList = oQuery.Select(x => new MovimentoExport
+            {
+                id = x.ID,
+                artc = x.Articolo.Codice,
+                artd = x.Articolo.Descrizione,
+                parc = x.Partenza.Codice,
+                pard = x.Partenza.Descrizione,
+                desc = x.Destinazione.Codice,
+                desd = x.Destinazione.Descrizione,
+                cau = x.Causale,
+            }).OrderBy(x => x.id).ToList();
+
+            return Reporting.CsvHelper.ResponseCsv<MovimentoExport>(oList, "movimenti_articolo_" + CodiceArticolo + ".csv", ";", true);
         }
     }
 }
