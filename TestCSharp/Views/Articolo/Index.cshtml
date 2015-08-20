@@ -52,7 +52,7 @@
             <a href="~/Export/MovimentiCsv?ArticoloID=@item.ID&CodiceArticolo=@item.Codice&BackUrl=/Articolo" title="Esporta CSV">CSV</a>
 }
 @if(item.Movimenti.Count == 0) {
-            <a href="~/Articolo/Delete?ID=@item.ID&BackUrl=/Articolo" onclick="if(!confirm('Eliminare l'articolo?')) return false;" title="Elimina l'articolo">Elimina</a>
+            <a href="~/Articolo/Delete?ID=@item.ID&BackUrl=/Articolo" onclick="if(!confirm('Eliminare l\'articolo?')) return false;" title="Elimina l'articolo">Elimina</a>
 }
         </td>
     </tr>

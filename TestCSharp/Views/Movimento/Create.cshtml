@@ -13,7 +13,7 @@
 <a href="@ViewBag.BackUrl">Torna indietro</a>
 <hr />
 
-<form action="/Movimento/Insert" method="post">
+<form action="/Movimento/Insert" data-parsley-validate method="post">
     <input type="hidden" name="BackUrl" id="BackUrl" value="@ViewBag.BackUrl" />
     @Html.HiddenFor(x => x.ID)
 
@@ -67,7 +67,8 @@
         </tr>
     </table>
     
-    <a href="#" onclick="$(this).closest('form').submit()">Salva</a>
+    <input id="salva" type="submit" value="Salva" />
 
     <div class="clearfix"></div>
+
 </form>

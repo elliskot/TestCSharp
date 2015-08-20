@@ -146,6 +146,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\TestCSharp.sdf" />
+    <Content Include="Content\Plugins\Parsley\extra\plugin\bind.js" />
+    <Content Include="Content\Plugins\Parsley\extra\plugin\remote.js" />
+    <Content Include="Content\Plugins\Parsley\extra\validator\comparison.js" />
+    <Content Include="Content\Plugins\Parsley\extra\validator\dateiso.js" />
+    <Content Include="Content\Plugins\Parsley\extra\validator\luhn.js" />
+    <Content Include="Content\Plugins\Parsley\extra\validator\words.js" />
+    <Content Include="Content\Plugins\Parsley\i18n\it.js" />
+    <Content Include="Content\Plugins\Parsley\parsley.css" />
+    <Content Include="Content\Plugins\Parsley\parsley.js" />
+    <Content Include="Content\Plugins\Parsley\parsley.min.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
