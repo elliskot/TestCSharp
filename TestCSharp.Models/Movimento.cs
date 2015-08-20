@@ -12,10 +12,11 @@ namespace TestCSharp.Models
         public int ArticoloID { get; set; }
         public int PartenzaID { get; set; }
         public int DestinazioneID { get; set; }
-        public string Causale { get; set; }
+        public int CausaleID { get; set; }
 
         public virtual Articolo Articolo { get; set; }
         public virtual Magazzino Partenza { get; set; }
         public virtual Magazzino Destinazione { get; set; }
+        public virtual Causale Causale { get; set; }
     }
 }

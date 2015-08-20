@@ -17,10 +17,7 @@ namespace TestCSharp.Models.Mappings
             this.Property(t => t.ArticoloID).IsRequired();
             this.Property(t => t.PartenzaID).IsRequired();
             this.Property(t => t.DestinazioneID).IsRequired();
-            
-            this.Property(t => t.Causale)
-                .IsRequired()
-                .HasMaxLength(200);
+            this.Property(t => t.CausaleID).IsRequired();
 
             // Table & Column Mappings
             this.ToTable("Movimento");
@@ -28,7 +25,7 @@ namespace TestCSharp.Models.Mappings
             this.Property(t => t.ArticoloID).HasColumnName("ArticoloID");
             this.Property(t => t.PartenzaID).HasColumnName("PartenzaID");
             this.Property(t => t.DestinazioneID).HasColumnName("DestinazioneID");
-            this.Property(t => t.Causale).HasColumnName("Causale");
+            this.Property(t => t.CausaleID).HasColumnName("CausaleID");
 
             //// Relationships
             this.HasRequired(t => t.Articolo)
@@ -40,7 +37,9 @@ namespace TestCSharp.Models.Mappings
             this.HasRequired(t => t.Destinazione)
                 .WithMany(t => t.MovimentiD)
                 .HasForeignKey(d => d.DestinazioneID).WillCascadeOnDelete(false);
-
+            this.HasRequired(t => t.Causale)
+                .WithMany(t => t.Movimenti)
+                .HasForeignKey(d => d.CausaleID);
 
         }
     }

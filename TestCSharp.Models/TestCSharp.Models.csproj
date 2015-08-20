@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articolo.cs" />
+    <Compile Include="Causale.cs" />
     <Compile Include="Entities\ContextBse.cs" />
     <Compile Include="Entities\TestCSharpContext.cs" />
     <Compile Include="Magazzino.cs" />
