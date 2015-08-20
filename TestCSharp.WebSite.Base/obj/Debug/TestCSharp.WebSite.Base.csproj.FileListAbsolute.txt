@@ -17,3 +17,5 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.WebSite.Base\bin\Debug\it\EntityF
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.WebSite.Base\bin\Debug\it\EntityFramework.SqlServer.resources.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.WebSite.Base\obj\Debug\TestCSharp.WebSite.Base.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.WebSite.Base\obj\Debug\TestCSharp.WebSite.Base.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.WebSite.Base\bin\Debug\System.Web.Mvc.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.WebSite.Base\bin\Debug\System.Web.Mvc.xml

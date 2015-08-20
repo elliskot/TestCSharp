@@ -46,6 +46,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,15 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DataAccess\WebDatabaseFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Results\Result.cs" />
     <Compile Include="ViewModels\Results\ResultBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\GDP\GDP.DataAccess\TestCSharp.DataAccess.csproj">
-      <Project>{fea8cf55-35a6-4bec-aeb9-d9e68c00c1fb}</Project>
+    <ProjectReference Include="..\TestCSharp.DataAccess\TestCSharp.DataAccess.csproj">
+      <Project>{26176ff1-40a1-4012-b513-6ad989521077}</Project>
       <Name>TestCSharp.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestCSharp.Models\TestCSharp.Models.csproj">

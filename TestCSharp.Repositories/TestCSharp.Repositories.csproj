@@ -59,8 +59,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\GDP\GDP.DataAccess\TestCSharp.DataAccess.csproj">
-      <Project>{fea8cf55-35a6-4bec-aeb9-d9e68c00c1fb}</Project>
+    <ProjectReference Include="..\TestCSharp.DataAccess\TestCSharp.DataAccess.csproj">
+      <Project>{26176ff1-40a1-4012-b513-6ad989521077}</Project>
       <Name>TestCSharp.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestCSharp.Models\TestCSharp.Models.csproj">
