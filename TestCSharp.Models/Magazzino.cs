@@ -10,12 +10,14 @@ namespace TestCSharp.Models
     {
         public Magazzino()
         {
-            this.Movimenti = new List<Movimento>();
+            this.MovimentiP = new List<Movimento>();
+            this.MovimentiD = new List<Movimento>();
         }
         public int ID { get; set; }
         public string Codice { get; set; }
         public string Descrizione { get; set; }
 
-        public virtual ICollection<Movimento> Movimenti { get; set; }
+        public virtual ICollection<Movimento> MovimentiP { get; set; }
+        public virtual ICollection<Movimento> MovimentiD { get; set; }
     }
 }

@@ -13,6 +13,10 @@ namespace TestCSharp.Models.Mappings
             // Properties
             this.Property(t => t.ID)
                 .IsRequired();
+
+            this.Property(t => t.ArticoloID).IsRequired();
+            this.Property(t => t.PartenzaID).IsRequired();
+            this.Property(t => t.DestinazioneID).IsRequired();
             
             this.Property(t => t.Causale)
                 .IsRequired()
@@ -31,11 +35,12 @@ namespace TestCSharp.Models.Mappings
                 .WithMany(t => t.Movimenti)
                 .HasForeignKey(d => d.ArticoloID);
             this.HasRequired(t => t.Partenza)
-                .WithMany(t => t.Movimenti)
-                .HasForeignKey(d => d.PartenzaID);
+                .WithMany(t => t.MovimentiP)
+                .HasForeignKey(d => d.PartenzaID).WillCascadeOnDelete(false);
             this.HasRequired(t => t.Destinazione)
-                .WithMany(t => t.Movimenti)
-                .HasForeignKey(d => d.DestinazioneID);
+                .WithMany(t => t.MovimentiD)
+                .HasForeignKey(d => d.DestinazioneID).WillCascadeOnDelete(false);
+
 
         }
     }

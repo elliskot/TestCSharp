@@ -1,0 +1,55 @@
+﻿@model IEnumerable<TestCSharp.Models.Movimento>
+
+@{
+    ViewBag.Title = "Movimenti";
+}
+
+@*@section sectionScripts {
+
+}*@
+
+<h1>Movimenti</h1>
+<p><a href="/Movimento/Create">Aggiungi nuovo movimento</a></p>
+<hr />
+<table class="dataTable">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Articolo
+        </th>
+        <th>
+            Partenza
+        </th>
+        <th>
+            Destinazione
+        </th>
+        <th>
+            Causale
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <strong>@Html.DisplayFor(modelItem => item.ID)</strong>
+        </td>
+        <td>
+            <strong>@item.Articolo.Codice</strong> - @item.Articolo.Descrizione
+        </td>
+        <td>
+            <strong>@item.Partenza.Codice</strong> - @item.Partenza.Descrizione
+        </td>
+        <td>
+            <strong>@item.Destinazione.Codice</strong> - @item.Destinazione.Descrizione
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Causale)
+        </td>
+    </tr>
+}
+
+</table>
+
