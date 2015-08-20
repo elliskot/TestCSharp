@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TestCSharp.Models.Magazzino>
+
+@{
+    ViewBag.Title = "Magazzini";
+}
+
+@*@section sectionScripts {
+
+}*@
+
+<h1>Magazzini</h1>
+<p>
+<a href="/Magazzino/Create">Aggiungi nuovo magazzino</a></p>
+<hr />
+<table class="dataTable">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Codice
+        </th>
+        <th>
+            Descrizione
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <strong>@Html.DisplayFor(modelItem => item.ID)</strong>
+        </td>
+        <td>
+            <strong>@Html.DisplayFor(modelItem => item.Codice)</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td class="button-action xl">
+            @*<a href="~/Magazzino/Edit?ID=@item.ID&BackUrl=/Magazzino" title="Modifica"><div class="btn btn-large btn-info"><i class="icon-search"></i></div></a>
+            <a href="~/Magazzino/Delete?ID=@item.ID&BackUrl=/Magazzino" onclick="if(!confirm('Eliminare il magazzino?')) return false;" title="Elimina il magazzino"><div class="btn btn-large btn-danger"><i class="icon-remove"></i></div></a>*@
+            <a href="~/Magazzino/Edit?ID=@item.ID&BackUrl=/Magazzino" title="Modifica">Modifica</a>
+            <a href="~/Magazzino/Delete?ID=@item.ID&BackUrl=/Magazzino" onclick="if(!confirm('Eliminare il magazzino?')) return false;" title="Elimina il magazzino">Elimina</a>
+        </td>
+    </tr>
+}
+
+</table>
+
