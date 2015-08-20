@@ -26,24 +26,6 @@ namespace TestCSharp.Models.Mappings
             this.Property(t => t.Codice).HasColumnName("Codice");
             this.Property(t => t.Descrizione).HasColumnName("Descrizione");
 
-            //// Relationships
-            //this.HasOptional(t => t.CicloNormale)
-            //    .WithMany(t => t.ArticoliNormali)
-            //    .HasForeignKey(d => d.CicloNormaleID);
-
-            ////this.HasOptional(s => s.CicloSpeciale) // Mark StudentAddress is optional for Student
-            ////    .WithOptionalDependent(ad => ad.ArticoloSpeciale); // Create inverse relationship
-
-            ////this.HasOptional(t => t.CicloSpeciale)
-            ////    .WithOptionalDependent(t => t.ArticoloSpeciale);
-            //this.HasOptional(t => t.CicloSpeciale)
-            //    .WithMany(t => t.ArticoliSpeciali)
-            //    .HasForeignKey(d => d.CicloSpecialeID);
-
-            //this.HasOptional(t => t.CicloStandard)
-            //    .WithMany(t => t.ArticoliStandard)
-            //    .HasForeignKey(d => d.CicloStandardID);
-
         }
     }
 }

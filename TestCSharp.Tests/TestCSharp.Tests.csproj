@@ -115,9 +115,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestCSharp\TestCSharp.csproj">
+    <ProjectReference Include="..\TestCSharp\TestCSharp.WebSite.csproj">
       <Project>{92A65263-EAA8-4D8A-BE93-7B3A6126A542}</Project>
-      <Name>TestCSharp</Name>
+      <Name>TestCSharp.WebSite</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
