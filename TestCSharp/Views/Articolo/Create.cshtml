@@ -13,7 +13,7 @@
 <a href="@ViewBag.BackUrl">Torna indietro</a>
 <hr />
 
-<form action="/Articolo/Insert"  method="post">
+<form action="/Articolo/Insert" data-parsley-validate method="post">
     <input type="hidden" name="BackUrl" id="BackUrl" value="@ViewBag.BackUrl" />
     @Html.HiddenFor(x => x.ID)
 
