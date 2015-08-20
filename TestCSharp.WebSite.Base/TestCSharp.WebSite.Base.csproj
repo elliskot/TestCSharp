@@ -63,6 +63,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Results\Result.cs" />
     <Compile Include="ViewModels\Results\ResultBase.cs" />
+    <Compile Include="ViewModels\Views\ArticoloExport.cs" />
+    <Compile Include="ViewModels\Views\MovimentoExport.cs" />
+    <Compile Include="ViewModels\Views\MagazzinoExport.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestCSharp.DataAccess\TestCSharp.DataAccess.csproj">
