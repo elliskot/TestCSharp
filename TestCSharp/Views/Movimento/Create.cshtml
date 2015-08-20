@@ -1,0 +1,73 @@
+﻿@model TestCSharp.Models.Movimento
+
+@{
+    ViewBag.Title = "Movimenti - Nuovo";
+}
+
+@*@section sectionScripts {
+
+}*@
+
+<h1>Movimenti: Nuovo movimento</h1>
+
+<a href="@ViewBag.BackUrl">Torna indietro</a>
+<hr />
+
+<form action="/Movimento/Insert" method="post">
+    <input type="hidden" name="BackUrl" id="BackUrl" value="@ViewBag.BackUrl" />
+    @Html.HiddenFor(x => x.ID)
+
+    <table class="dataTable">
+        <tr>
+            <td class="editor-label">
+                Articolo
+            </td>
+            <td class="editor-input" colspan="2">
+@if(Model.Articolo != null) {
+                @Html.HiddenFor(x => x.ArticoloID)
+                <text><strong>@Model.Articolo.Codice</strong> - @Model.Articolo.Descrizione </text>
+} else {
+                @Html.DropDownList("ArticoloID", new SelectList(ViewBag.Articoli, "ID", "Codice"), "scegli...", new { required = "required" })
+                @Html.ValidationMessageFor(m => m.ArticoloID)
+}
+            </td>
+        </tr>
+        <tr>
+            <td class="editor-label">
+                Partenza<span class="red"> *</span>
+            </td>
+            <td class="editor-input" colspan="2">
+                @Html.DropDownList("PartenzaID", new SelectList(ViewBag.Magazzini, "ID", "Codice"), "scegli...", new { required = "required" })
+                @Html.ValidationMessageFor(m => m.PartenzaID)
+            </td>
+        </tr>
+        <tr>
+            <td class="editor-label">
+                Destinazione<span class="red"> *</span>
+            </td>
+            <td class="editor-input" colspan="2">
+                @Html.DropDownList("DestinazioneID", new SelectList(ViewBag.Magazzini, "ID", "Codice"), "scegli...", new { required = "required" })
+                @Html.ValidationMessageFor(m => m.DestinazioneID)
+            </td>
+        </tr>
+        <tr>
+            <td class="editor-label">
+                Causale<span class="red"> *</span>
+            </td>
+            <td class="editor-input" colspan="2">
+                <select id="Causale" name="Causale" class="parsley-validated" data-parsley-required data-error-container="span#causaleError">
+                    <option selected disabled>Scegli...</option>
+                    <option value="Carico">Carico</option>
+                    <option value="Scarico per Furto">Scarico per Furto</option>
+                    <option value="Scarico per Vendita">Scarico per Vendita</option>
+                    <option value="Invio ad altro magazzino">Invio ad altro magazzino</option>
+                </select>
+                <span id="causaleError" style="color:red"></span>
+            </td>
+        </tr>
+    </table>
+    
+    <a href="#" onclick="$(this).closest('form').submit()">Salva</a>
+
+    <div class="clearfix"></div>
+</form>

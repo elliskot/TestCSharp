@@ -51,3 +51,12 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\it\System.Web.WebPages.Deploy
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\it\System.Web.WebPages.Razor.resources.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\obj\Debug\TestCSharp.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\obj\Debug\TestCSharp.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.DataAccess.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.Models.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.Repositories.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.WebSite.Base.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.DataAccess.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.Models.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.Repositories.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\bin\TestCSharp.WebSite.Base.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp\obj\Debug\TestCSharp.WebSite.csprojResolveAssemblyReference.cache

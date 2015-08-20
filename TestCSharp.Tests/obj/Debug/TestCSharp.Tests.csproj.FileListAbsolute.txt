@@ -40,3 +40,11 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\it\System.Web.Opt
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\obj\Debug\TestCSharp.Tests.csprojResolveAssemblyReference.cache
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\obj\Debug\TestCSharp.Tests.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\obj\Debug\TestCSharp.Tests.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.WebSite.Base.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.Repositories.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.DataAccess.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.Models.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.WebSite.Base.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.Repositories.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.DataAccess.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.Models.pdb
