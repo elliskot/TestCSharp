@@ -1,19 +1,19 @@
-﻿@model TestCSharp.Models.Articolo
+﻿@model TestCSharp.Models.Magazzino
 
 @{
-    ViewBag.Title = "Articoli - Nuovo";
+    ViewBag.Title = "Magazzini - Modifica";
 }
 
 @*@section sectionScripts {
 
 }*@
 
-<h1>Articoli: Nuovo articolo</h1>
+<h1>Magazzini: Modifica magazzino</h1>
 
 <a href="@ViewBag.BackUrl">Torna indietro</a>
 <hr />
 
-<form action="/Articolo/Insert" method="post">
+<form action="/Magazzino/Update" method="post">
     <input type="hidden" name="BackUrl" id="BackUrl" value="@ViewBag.BackUrl" />
     @Html.HiddenFor(x => x.ID)
 

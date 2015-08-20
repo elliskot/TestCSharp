@@ -16,8 +16,6 @@
 <form action="/Articolo/Update" method="post">
     <input type="hidden" name="BackUrl" id="BackUrl" value="@ViewBag.BackUrl" />
     @Html.HiddenFor(x => x.ID)
-    
-    <a href="#" onclick="$(this).closest('form').submit()">Salva</a>
 
     <table class="dataTable">
         <tr>
@@ -37,6 +35,8 @@
             </td>
         </tr>
     </table>
+    
+    <a href="#" onclick="$(this).closest('form').submit()">Salva</a>
 
     <div class="clearfix"></div>
 </form>
