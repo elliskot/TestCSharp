@@ -9,7 +9,12 @@
 }*@
 
 <h1>Articoli</h1>
-<p><a href="/Articolo/Create">Aggiungi nuovo articolo</a></p>
+<p>
+    <a href="/Articolo/Create">Aggiungi nuovo articolo</a>
+    Esporta elenco completo:
+    <a href="/Export/ArticoliJson">JSON</a>
+    <a href="~/Export/ArticoliCsv" title="Esporta Movimenti">CSV</a>
+</p>
 <hr />
 
 
@@ -41,6 +46,9 @@
         <td>
             <a href="~/Articolo/Edit?ID=@item.ID&BackUrl=/Articolo" title="Modifica">Modifica</a>
             <a href="~/Movimento/Create?ArticoloID=@item.ID&BackUrl=/Articolo" title="Movimenta Articolo">Movimenta Articolo</a>
+@if(item.Movimenti.Count > 0) {
+            <a href="~/Export/MovimentiJson?ArticoloID=@item.ID&BackUrl=/Articolo" title="Esporta Movimenti">Esporta Movimenti</a>
+}
 @if(item.Movimenti.Count == 0) {
             <a href="~/Articolo/Delete?ID=@item.ID&BackUrl=/Articolo" onclick="if(!confirm('Eliminare l'articolo?')) return false;" title="Elimina l'articolo">Elimina</a>
 }
