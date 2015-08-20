@@ -132,12 +132,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ArticoloController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MagazzinoController.cs" />
+    <Compile Include="Controllers\MovimentoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\TestCSharp.sdf" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -194,6 +199,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Views\Articolo\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Magazzino\Index.cshtml" />
+    <Content Include="Views\Articolo\Edit.cshtml" />
+    <Content Include="Views\Articolo\Create.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -241,13 +251,30 @@
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Entities\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Movimento\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestCSharp.DataAccess\TestCSharp.DataAccess.csproj">
+      <Project>{26176ff1-40a1-4012-b513-6ad989521077}</Project>
+      <Name>TestCSharp.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCSharp.Models\TestCSharp.Models.csproj">
+      <Project>{4b5ef31b-4806-4355-b08d-6fab663d47dd}</Project>
+      <Name>TestCSharp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCSharp.Repositories\TestCSharp.Repositories.csproj">
+      <Project>{e4a056fb-39ee-45c5-92f4-13815d70aa51}</Project>
+      <Name>TestCSharp.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCSharp.WebSite.Base\TestCSharp.WebSite.Base.csproj">
+      <Project>{d9c84dd0-4393-40ce-99dc-4540a0705a46}</Project>
+      <Name>TestCSharp.WebSite.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
