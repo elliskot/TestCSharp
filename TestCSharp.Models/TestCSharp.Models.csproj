@@ -59,8 +59,12 @@
     <Compile Include="Magazzino.cs" />
     <Compile Include="Mappings\ArticoloMap.cs" />
     <Compile Include="Mappings\MagazzinoMap.cs" />
-    <Compile Include="Mappings\MovimentoMap.cs" />
-    <Compile Include="Movimento.cs" />
+    <Compile Include="Mappings\MovimentoMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Movimento.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

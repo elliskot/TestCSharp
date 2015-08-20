@@ -21,7 +21,7 @@ namespace TestCSharp.Repositories
         public IQueryable<Magazzino> GetAll()
         {
             IQueryable<Magazzino> oQueryable = DataContext.Magazzini
-                .Include(m => m.Movimenti);
+                .Include(m => m.MovimentiP);
 
             return oQueryable;
         }

@@ -21,9 +21,9 @@ namespace TestCSharp.Repositories
         public IQueryable<Movimento> GetAll()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti
-                .Include(m => m.Articolo)
-                .Include(m => m.Partenza)
-                .Include(m => m.Destinazione);
+                .Include(m => m.Articolo);
+                //.Include(m => m.Partenza)
+                //.Include(m => m.Destinazione);
 
             return oQueryable;
         }
@@ -38,9 +38,9 @@ namespace TestCSharp.Repositories
         public override IQueryable<Movimento> GetEdit()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti
-                .Include(m => m.Articolo)
-                .Include(m => m.Partenza)
-                .Include(m => m.Destinazione); 
+                .Include(m => m.Articolo);
+            //.Include(m => m.Partenza)
+            //.Include(m => m.Destinazione);
 
             oQueryable = this.ApplySecurityOnWrite(oQueryable);
             return oQueryable;
@@ -50,9 +50,9 @@ namespace TestCSharp.Repositories
         public override IQueryable<Movimento> Get()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti
-                .Include(m => m.Articolo)
-                .Include(m => m.Partenza)
-                .Include(m => m.Destinazione); 
+                .Include(m => m.Articolo);
+            //.Include(m => m.Partenza)
+            //.Include(m => m.Destinazione);
 
             return oQueryable;
         }
