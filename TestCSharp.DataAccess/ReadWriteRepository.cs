@@ -23,6 +23,7 @@ namespace TestCSharp.DataAccess
 
         protected abstract IQueryable<T> ApplySecurityOnWrite(IQueryable<T> query);
         public abstract IQueryable<T> GetAll();
+        public abstract IQueryable<T> GetAllSimpleList();
         public abstract IQueryable<T> GetEdit();
 
         public virtual void Add(T entity) {

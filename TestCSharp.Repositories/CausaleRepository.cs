@@ -26,7 +26,7 @@ namespace TestCSharp.Repositories
             return oQueryable;
         }
 
-        public IQueryable<Causale> GetAllSimpleList()
+        public override IQueryable<Causale> GetAllSimpleList()
         {
             IQueryable<Causale> oQueryable = DataContext.Causali;
 

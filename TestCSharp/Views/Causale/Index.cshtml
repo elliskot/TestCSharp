@@ -10,6 +10,7 @@
 
 <h1>Causali</h1>
 <p>
+    <a href="/Causale/Create">Aggiungi nuova causale</a>
     <strong>Esporta elenco completo:</strong>
     <a href="/Export/CausaliJson" title="Esporta JSON">JSON</a>
     <a href="~/Export/CausaliCsv" title="Esporta CSV">CSV</a>
@@ -25,6 +26,7 @@
         <th>
             Descrizione
         </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -34,7 +36,13 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Descrizione)
-        </td>        
+        </td>
+        <td>
+            <a href="~/Causale/Edit?ID=@item.ID&BackUrl=/Causale" title="Modifica">Modifica</a>
+@if(item.Movimenti.Count == 0) {
+            <a href="~/Causale/Delete?ID=@item.ID&BackUrl=/Causale" onclick="if(!confirm('Eliminare la causale?')) return false;" title="Elimina la causale">Elimina</a>
+}
+        </td>
     </tr>
 }
 

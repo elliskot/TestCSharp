@@ -13,9 +13,7 @@ namespace TestCSharp.Tests.Models
     class InMemoryCausaleRepository : ICausaleRepository
     {
         private List<Causale> _db = new List<Causale>();
-
-        public Exception ExceptionToThrow { get; set; }
-
+        
         public void Add(Causale oCausale)
         {
             _db.Add(oCausale);
@@ -44,6 +42,11 @@ namespace TestCSharp.Tests.Models
             return _db.AsQueryable<Causale>();
         }
 
+        public IQueryable<Causale> GetAllSimpleList()
+        {
+            return _db.AsQueryable<Causale>();
+        }
+
         public IQueryable<Causale> GetEdit()
         {
             return _db.AsQueryable<Causale>();
@@ -53,13 +56,5 @@ namespace TestCSharp.Tests.Models
         {
             return _db.AsQueryable<Causale>();
         }
-
-
-
-        //void Update(T entity);
-        //void Delete(T entity);
-        //void Delete(Expression<Func<T, bool>> where);
-
-        //IQueryable<T> GetEdit();
     }
 }

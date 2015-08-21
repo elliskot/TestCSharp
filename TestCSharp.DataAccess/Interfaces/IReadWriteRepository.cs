@@ -14,6 +14,7 @@ namespace TestCSharp.DataAccess.Interfaces
         void Delete(Expression<Func<T, bool>> where);
 
         IQueryable<T> GetAll();
+        IQueryable<T> GetAllSimpleList();
         IQueryable<T> GetEdit();
     }
 }

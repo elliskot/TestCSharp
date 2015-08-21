@@ -28,7 +28,7 @@ namespace TestCSharp.Repositories
             return oQueryable;
         }
 
-        public IQueryable<Movimento> GetAllSimpleList()
+        public override IQueryable<Movimento> GetAllSimpleList()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti;
 

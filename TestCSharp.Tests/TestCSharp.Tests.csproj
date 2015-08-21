@@ -109,6 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ExportControllerTest.cs" />
     <Compile Include="Models\InMemoryCausaleRepository.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -30,9 +30,7 @@ namespace TestCSharp.Controllers
         public ActionResult Create(Movimento model)
         {
             if (model == null)
-            {
                 model = new Movimento();
-            }
 
             if (model.ArticoloID > 0)
             {

@@ -1,0 +1,36 @@
+﻿@model TestCSharp.Models.Causale
+
+@{
+    ViewBag.Title = "Causali - Nuovo";
+}
+
+@*@section sectionScripts {
+
+}*@
+
+<h1>Causali: Nuova causale</h1>
+
+<a href="@ViewBag.BackUrl">Torna indietro</a>
+<hr />
+
+<form action="/Causale/Insert" data-parsley-validate method="post">
+    <input type="hidden" name="BackUrl" id="BackUrl" value="@ViewBag.BackUrl" />
+    @Html.HiddenFor(x => x.ID)
+
+    <table class="dataTable">
+        <tr>
+            <td class="editor-label">
+                Descrizione<span class="red"> *</span>
+            </td>
+            <td class="editor-input" colspan="2">
+                <input id="Descrizione" name="Descrizione" type="text" value="@Model.Descrizione" data-parsley-required data-error-container="span#descrizioneError" />
+                <span id="descrizioneError" style="color:red"></span>
+            </td>
+        </tr>
+    </table>
+    
+    <input id="salva" type="submit" value="Salva" />
+
+    <div class="clearfix"></div>
+
+</form>

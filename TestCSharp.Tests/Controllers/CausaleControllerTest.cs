@@ -19,23 +19,26 @@ namespace TestCSharp.Tests.Controllers
     public class CausaleControllerTest
     {
         [TestMethod]
-        public void Index_Get_AsksForIndexView()
+        public void Index_Get_AsksForView()
         {
-            InizializaContext();
+            InizializeContext();
             //Arrange
             var controller = new CausaleController();
 
             //Act
-            var result = controller.Index() as ViewResult;
+            var result = (ViewResult)controller.Index();
 
-            //Assert
-            Assert.IsTrue(String.IsNullOrEmpty(result.ViewName));
+            //AssertCreate
+            //result.AssertViewRendered();
+            //Assert.AreEqual("Index", result.);
+            //Assert.IsTrue(String.IsNullOrEmpty(result.ViewName));
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
         public void Index_Get_RetrievesAllCausaliFromRepository()
         {
-            InizializaContext();
+            InizializeContext();
             // Arrange
             Causale oCausale1 = GetCausale(1, "Carico");
             Causale oCausale2 = GetCausale(2, "Scarico");
@@ -45,7 +48,7 @@ namespace TestCSharp.Tests.Controllers
             var controller = new CausaleController(repository);
 
             // Act
-            var result = controller.Index() as ViewResult;
+            var result = (ViewResult)controller.Index();
 
             // Assert
             var model = (IEnumerable<Causale>)result.ViewData.Model;
@@ -54,27 +57,101 @@ namespace TestCSharp.Tests.Controllers
         }
 
         [TestMethod]
-        public void Create_Post_ReturnsViewIfModelStateIsNotValid()
+        public void Create_Get_AsksForView()
+        {
+            InizializeContext();
+            // Arrange
+            var controller = new CausaleController();
+            Causale oCausale = GetCausale(1, "");
+
+            // Act
+            var result = (ViewResult)controller.Create(oCausale);
+
+            // Assert
+            Assert.IsTrue(String.IsNullOrEmpty(result.ViewName));
+        }
+
+        [TestMethod]
+        public void Insert_Post_ReturnsViewIfModelStateIsNotValid()
         {
             // Arrange
             var controller = new CausaleController(new InMemoryCausaleRepository());
 
             controller.ModelState.AddModelError("", "mock error message");
-            //Causale model = GetCausale(1, "");
+            Causale oCausale = GetCausale(1, "");
 
             // Act
-            var result = (ViewResult)controller.Create();
+            var result = controller.Insert(oCausale);
+                        
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
+            RedirectToRouteResult routeResult = result as RedirectToRouteResult;
+            Assert.AreEqual(routeResult.RouteValues["action"], "Create");
+
+        }
+
+        [TestMethod]
+        public void Edit_Get_AsksForView()
+        {
+            InizializeContext();
+            // Arrange
+            var controller = new CausaleController();
+            Causale oCausale = GetCausale(1, "");
+
+            // Act
+            var result = (ViewResult)controller.Edit(oCausale);
 
             // Assert
-            Assert.AreEqual("Create", result.ViewName);
-        } 
+            Assert.IsTrue(String.IsNullOrEmpty(result.ViewName));
+        }
+
+        [TestMethod]
+        public void Update_Post_ReturnsViewIfModelStateIsNotValid()
+        {
+            // Arrange
+            var controller = new CausaleController(new InMemoryCausaleRepository());
+
+            controller.ModelState.AddModelError("", "mock error message");
+            Causale oCausale = GetCausale(1, "");
+
+            // Act
+            var result = controller.Update(oCausale);
+
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
+            RedirectToRouteResult routeResult = result as RedirectToRouteResult;
+            Assert.AreEqual(routeResult.RouteValues["action"], "Edit");
+        }
+
+        //[TestMethod]
+        //public void Insert_Post_ReturnsViewIfRepositoryThrowsException()
+        //{
+        //    InizializeContext();
+        //    // Arrange
+        //    InMemoryCausaleRepository repository = new InMemoryCausaleRepository();
+        //    Exception exception = new Exception();
+        //    repository.ExceptionToThrow = exception;
+        //    var controller = new CausaleController(repository);
+        //    Causale oCausale = GetCausale(1, "");
+
+        //    // Act
+        //    var result = controller.Insert(oCausale);
+
+        //    // Assert
+        //    Assert.AreEqual("Create", result.ViewName);
+        //    //Assert.AreEqual("Insert", result.ViewName);
+        //    ModelState modelState = result.ViewData.ModelState[""];
+        //    Assert.IsNotNull(modelState);
+        //    Assert.IsTrue(modelState.Errors.Any());
+        //    Assert.AreEqual(exception, modelState.Errors[0].Exception);
+        //} 
 
         private Causale GetCausale(int ID, string Descrizione)
         {
             return new Causale { ID = ID, Descrizione = Descrizione };
         }
 
-        private void InizializaContext()
+        private void InizializeContext()
         {
             // Step 1: Setup the HTTP Request
             var httpRequest = new HttpRequest("", "http://localhost:11173/", "");
