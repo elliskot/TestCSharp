@@ -28,7 +28,8 @@ namespace TestCSharp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<TestCSharpContext>(new DropCreateDatabaseIfModelChanges<TestCSharpContext>());
+            //Database.SetInitializer<TestCSharpContext>(new DropCreateDatabaseIfModelChanges<TestCSharpContext>());
+            Database.SetInitializer(new EntitiesContextInitializer());
         }
     }
 }

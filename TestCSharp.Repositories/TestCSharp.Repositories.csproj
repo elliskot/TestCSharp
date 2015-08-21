@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticoloRepository.cs" />
+    <Compile Include="CausaleRepository.cs" />
     <Compile Include="MagazzinoRepository.cs" />
     <Compile Include="MovimentoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticoloController.cs" />
+    <Compile Include="Controllers\CausaleController.cs" />
     <Compile Include="Controllers\ExportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MagazzinoController.cs" />
@@ -145,7 +146,6 @@
     <Compile Include="Reporting\ReportHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TestCSharp.sdf" />
     <Content Include="Content\Plugins\Parsley\extra\plugin\bind.js" />
     <Content Include="Content\Plugins\Parsley\extra\plugin\remote.js" />
     <Content Include="Content\Plugins\Parsley\extra\validator\comparison.js" />
@@ -221,6 +221,7 @@
     <Content Include="Views\Magazzino\Edit.cshtml" />
     <Content Include="Views\Movimento\Create.cshtml" />
     <Content Include="Views\Movimento\Index.cshtml" />
+    <Content Include="Views\Causale\Index.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -268,6 +269,7 @@
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Entities\" />
     <Folder Include="Models\" />
   </ItemGroup>

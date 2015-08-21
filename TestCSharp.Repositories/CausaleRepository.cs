@@ -11,44 +11,44 @@ using TestCSharp.DataAccess.Interfaces;
 
 namespace TestCSharp.Repositories
 {
-    public class ArticoloRepository : ReadWriteRepository<Articolo, TestCSharpContext>, IArticoloRepository
+    public class CausaleRepository : ReadWriteRepository<Causale, TestCSharpContext>, ICausaleRepository
     {
-        public ArticoloRepository(IDatabaseFactory<TestCSharpContext> databaseFactory)
+        public CausaleRepository(IDatabaseFactory<TestCSharpContext> databaseFactory)
             : base(databaseFactory)
         {
         }
 
-        public IQueryable<Articolo> GetAll()
+        public IQueryable<Causale> GetAll()
         {
-            IQueryable<Articolo> oQueryable = DataContext.Articoli
+            IQueryable<Causale> oQueryable = DataContext.Causali
                 .Include(m => m.Movimenti);
 
             return oQueryable;
         }
 
-        public IQueryable<Articolo> GetAllSimpleList()
+        public IQueryable<Causale> GetAllSimpleList()
         {
-            IQueryable<Articolo> oQueryable = DataContext.Articoli;
+            IQueryable<Causale> oQueryable = DataContext.Causali;
 
             return oQueryable;
         }
 
-        public override IQueryable<Articolo> GetEdit()
+        public override IQueryable<Causale> GetEdit()
         {
-            IQueryable<Articolo> oQueryable = DataContext.Articoli;
+            IQueryable<Causale> oQueryable = DataContext.Causali;
 
             oQueryable = this.ApplySecurityOnWrite(oQueryable);
             return oQueryable;
         }
 
-        public override IQueryable<Articolo> Get()
+        public override IQueryable<Causale> Get()
         {
-            IQueryable<Articolo> oQueryable = DataContext.Articoli;
+            IQueryable<Causale> oQueryable = DataContext.Causali;
 
             return oQueryable;
         }
 
-        protected override IQueryable<Articolo> ApplySecurityOnWrite(IQueryable<Articolo> query)
+        protected override IQueryable<Causale> ApplySecurityOnWrite(IQueryable<Causale> query)
         {
             // Qui applico le regole per l'accesso al db
 
@@ -57,7 +57,7 @@ namespace TestCSharp.Repositories
 
     }
 
-    public interface IArticoloRepository : IReadWriteRepository<Articolo>
+    public interface ICausaleRepository : IReadWriteRepository<Causale>
     {
     }
 }

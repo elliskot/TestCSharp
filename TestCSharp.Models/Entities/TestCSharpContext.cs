@@ -29,11 +29,13 @@ namespace TestCSharp.Models.Entities
         public DbSet<Articolo> Articoli { get; set; }
         public DbSet<Magazzino> Magazzini { get; set; }
         public DbSet<Movimento> Movimenti { get; set; }
+        public DbSet<Causale> Causali { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Configurations.Add(new ArticoloMap());
             modelBuilder.Configurations.Add(new MagazzinoMap());
             modelBuilder.Configurations.Add(new MovimentoMap());
+            modelBuilder.Configurations.Add(new CausaleMap());
         }
     }
 }

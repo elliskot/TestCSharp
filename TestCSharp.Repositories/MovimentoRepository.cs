@@ -46,13 +46,9 @@ namespace TestCSharp.Repositories
             return oQueryable;
         }
 
-
         public override IQueryable<Movimento> Get()
         {
-            IQueryable<Movimento> oQueryable = DataContext.Movimenti
-                .Include(m => m.Articolo);
-            //.Include(m => m.Partenza)
-            //.Include(m => m.Destinazione);
+            IQueryable<Movimento> oQueryable = DataContext.Movimenti;
 
             return oQueryable;
         }

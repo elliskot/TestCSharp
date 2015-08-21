@@ -56,9 +56,11 @@
     <Compile Include="Articolo.cs" />
     <Compile Include="Causale.cs" />
     <Compile Include="Entities\ContextBse.cs" />
+    <Compile Include="Entities\EntitiesContextInitializer.cs" />
     <Compile Include="Entities\TestCSharpContext.cs" />
     <Compile Include="Magazzino.cs" />
     <Compile Include="Mappings\ArticoloMap.cs" />
+    <Compile Include="Mappings\CausaleMap.cs" />
     <Compile Include="Mappings\MagazzinoMap.cs" />
     <Compile Include="Mappings\MovimentoMap.cs">
       <SubType>Code</SubType>

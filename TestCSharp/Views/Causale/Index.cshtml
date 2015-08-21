@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TestCSharp.Models.Causale>
+
+@{
+    ViewBag.Title = "Causali";
+}
+
+@*@section sectionScripts {
+
+}*@
+
+<h1>Causali</h1>
+<p>
+    <strong>Esporta elenco completo:</strong>
+    <a href="/Export/CausaliJson" title="Esporta JSON">JSON</a>
+    <a href="~/Export/CausaliCsv" title="Esporta CSV">CSV</a>
+</p>
+<hr />
+
+
+<table class="dataTable">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Descrizione
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <strong>@Html.DisplayFor(modelItem => item.ID)</strong>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>        
+    </tr>
+}
+
+</table>
+

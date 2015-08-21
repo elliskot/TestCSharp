@@ -13,12 +13,13 @@ namespace TestCSharp.Controllers
         private Repositories.ArticoloRepository _oArticoloRepo;
         private Repositories.MagazzinoRepository _oMagazzinoRepo;
         private Repositories.MovimentoRepository _oMovimentoRepo;
+        private Repositories.CausaleRepository _oCausaleRepo;
 
-        public ExportController() : base()
-        {
+        public ExportController() : base() {
             _oArticoloRepo = new Repositories.ArticoloRepository(this.DatabaseFactory);
             _oMagazzinoRepo = new Repositories.MagazzinoRepository(this.DatabaseFactory);
             _oMovimentoRepo = new Repositories.MovimentoRepository(this.DatabaseFactory);
+            _oCausaleRepo = new Repositories.CausaleRepository(this.DatabaseFactory);
         }
 
         public JsonResult ArticoliJson()
@@ -57,8 +58,19 @@ namespace TestCSharp.Controllers
                 pard = x.Partenza.Descrizione,
                 desc = x.Destinazione.Codice,
                 desd = x.Destinazione.Descrizione,
-                cau = x.Causale,
+                cau = x.Causale.Descrizione,
             }).OrderBy(x => x.id).ToList();
+            return Json(oList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult CausaliJson()
+        {
+            IQueryable<Causale> oQuery = _oCausaleRepo.GetAllSimpleList();
+            List<CausaleExport> oList = oQuery.Select(x => new CausaleExport
+            {
+                id = x.ID,
+                des = x.Descrizione,
+            }).OrderBy(x => x.des).ToList();
             return Json(oList, JsonRequestBehavior.AllowGet);
         }
 
@@ -145,10 +157,22 @@ namespace TestCSharp.Controllers
                 pard = x.Partenza.Descrizione,
                 desc = x.Destinazione.Codice,
                 desd = x.Destinazione.Descrizione,
-                cau = x.Causale,
+                cau = x.Causale.Descrizione,
             }).OrderBy(x => x.id).ToList();
 
             return Reporting.CsvHelper.ResponseCsv<MovimentoExport>(oList, "movimenti_articolo_" + CodiceArticolo + ".csv", ";", true);
+        }
+
+        public FileStreamResult CausaliCsv()
+        {
+            IQueryable<Causale> oQuery = _oCausaleRepo.GetAllSimpleList();
+            List<CausaleExport> oList = oQuery.Select(x => new CausaleExport
+            {
+                id = x.ID,
+                des = x.Descrizione,
+            }).OrderBy(x => x.des).ToList();
+
+            return Reporting.CsvHelper.ResponseCsv<CausaleExport>(oList, "causali.csv", ";", true);
         }
     }
 }

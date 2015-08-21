@@ -41,7 +41,6 @@ namespace TestCSharp.Repositories
             return oQueryable;
         }
 
-
         public override IQueryable<Magazzino> Get()
         {
             IQueryable<Magazzino> oQueryable = DataContext.Magazzini;
