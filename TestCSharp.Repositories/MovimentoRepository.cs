@@ -18,7 +18,7 @@ namespace TestCSharp.Repositories
         {
         }
 
-        public IQueryable<Movimento> GetAll()
+        public override IQueryable<Movimento> GetAll()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti
                 .Include(m => m.Articolo)

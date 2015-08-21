@@ -48,3 +48,5 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.WebSit
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.Repositories.pdb
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.DataAccess.pdb
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\TestCSharp.Models.pdb
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\Moq.dll
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Tests\bin\Debug\Moq.xml
