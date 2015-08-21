@@ -67,9 +67,10 @@ namespace TestCSharp.Controllers
                 Magazzino oMagazzino = _oMagazzinoRepo.GetEdit().SingleOrDefault(x => x.ID == model.ID);
                 if (oMagazzino != null)
                     _oMagazzinoRepo.Delete(oMagazzino);
-            }
 
-            this.DatabaseFactory.GetContext().SaveChanges();
+                this.DatabaseFactory.GetContext().SaveChanges();
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
     }

@@ -88,5 +88,20 @@ namespace TestCSharp.Controllers
             //return View("Edit", oCausale);
         }
 
+        public ActionResult Delete(Causale model)
+        {
+            if (model != null && ModelState.IsValid)
+            {
+                // Aggiorno l'operazione
+                Causale oCausale = _oCausaleRepo.GetEdit().SingleOrDefault(x => x.ID == model.ID);
+                if (oCausale != null)
+                    _oCausaleRepo.Delete(oCausale);
+
+                this.DatabaseFactory.GetContext().SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 }

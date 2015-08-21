@@ -15,9 +15,11 @@ namespace TestCSharp.Models.Mappings
                 .IsRequired();
 
             this.Property(t => t.Codice)
+                //.IsRequired()
                 .HasMaxLength(16);
 
             this.Property(t => t.Descrizione)
+                //.IsRequired()
                 .HasMaxLength(200);
 
             // Table & Column Mappings

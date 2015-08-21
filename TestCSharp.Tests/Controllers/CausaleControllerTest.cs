@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 //using Moq;
 using TestCSharp.Controllers;
 using TestCSharp.Models;
@@ -18,6 +19,7 @@ namespace TestCSharp.Tests.Controllers
     [TestClass]
     public class CausaleControllerTest
     {
+
         [TestMethod]
         public void Index_Get_AsksForView()
         {
@@ -77,17 +79,19 @@ namespace TestCSharp.Tests.Controllers
             // Arrange
             var controller = new CausaleController(new InMemoryCausaleRepository());
 
-            controller.ModelState.AddModelError("", "mock error message");
+            //controller.ModelState.AddModelError("", "error message");
+            controller.ModelState.Add("testError", new ModelState());
+            controller.ModelState.AddModelError("testError", "test");
+
             Causale oCausale = GetCausale(1, "");
 
             // Act
-            var result = controller.Insert(oCausale);
+            ActionResult result = controller.Insert(oCausale);
                         
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
             RedirectToRouteResult routeResult = result as RedirectToRouteResult;
-            Assert.AreEqual(routeResult.RouteValues["action"], "Create");
-
+            Assert.AreEqual(routeResult.RouteValues["action"], "Create");            
         }
 
         [TestMethod]
@@ -111,7 +115,7 @@ namespace TestCSharp.Tests.Controllers
             // Arrange
             var controller = new CausaleController(new InMemoryCausaleRepository());
 
-            controller.ModelState.AddModelError("", "mock error message");
+            controller.ModelState.AddModelError("", "error message");
             Causale oCausale = GetCausale(1, "");
 
             // Act
@@ -121,6 +125,24 @@ namespace TestCSharp.Tests.Controllers
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
             RedirectToRouteResult routeResult = result as RedirectToRouteResult;
             Assert.AreEqual(routeResult.RouteValues["action"], "Edit");
+        }
+
+        [TestMethod]
+        public void Delete_Post_ReturnsViewIfModelStateIsNotValid()
+        {
+            // Arrange
+            var controller = new CausaleController(new InMemoryCausaleRepository());
+
+            controller.ModelState.AddModelError("", "error message");
+            Causale oCausale = GetCausale(1, "");
+
+            // Act
+            var result = controller.Delete(oCausale);
+
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
+            RedirectToRouteResult routeResult = result as RedirectToRouteResult;
+            Assert.AreEqual(routeResult.RouteValues["action"], "Index"); 
         }
 
         //[TestMethod]
