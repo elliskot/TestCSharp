@@ -12,4 +12,3 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Models\bin\Debug\it\EntityFramewo
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Models\bin\Debug\it\EntityFramework.SqlServer.resources.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Models\obj\Debug\TestCSharp.Models.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Models\obj\Debug\TestCSharp.Models.pdb
-E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Models\obj\Debug\TestCSharp.Models.csprojResolveAssemblyReference.cache

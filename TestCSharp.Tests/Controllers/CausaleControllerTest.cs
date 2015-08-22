@@ -6,13 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-//using Moq;
 using TestCSharp.Controllers;
 using TestCSharp.Models;
 using TestCSharp.Repositories;
 using TestCSharp.Tests.Models;
-//using TestCSharp.Tests.Models;
 
 namespace TestCSharp.Tests.Controllers
 {

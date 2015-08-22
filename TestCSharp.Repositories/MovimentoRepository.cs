@@ -23,7 +23,8 @@ namespace TestCSharp.Repositories
             IQueryable<Movimento> oQueryable = DataContext.Movimenti
                 .Include(m => m.Articolo)
                 .Include(m => m.Partenza)
-                .Include(m => m.Destinazione);
+                .Include(m => m.Destinazione)
+                .Include(m => m.Causale);
 
             return oQueryable;
         }

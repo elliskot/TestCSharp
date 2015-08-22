@@ -55,14 +55,16 @@
                 Causale<span class="red"> *</span>
             </td>
             <td class="editor-input" colspan="2">
-                <select id="Causale" name="Causale" class="parsley-validated" data-parsley-required data-error-container="span#causaleError">
+                @Html.DropDownList("CausaleID", new SelectList(ViewBag.Causali, "ID", "Descrizione"), "scegli...", new { required = "required" })
+                @Html.ValidationMessageFor(m => m.CausaleID)
+                @*<select id="CausaleID" name="CausaleID" class="parsley-validated" data-parsley-required data-error-container="span#causaleError">
                     <option selected disabled>Scegli...</option>
                     <option value="Carico">Carico</option>
                     <option value="Scarico per Furto">Scarico per Furto</option>
                     <option value="Scarico per Vendita">Scarico per Vendita</option>
                     <option value="Invio ad altro magazzino">Invio ad altro magazzino</option>
                 </select>
-                <span id="causaleError" style="color:red"></span>
+                <span id="causaleError" style="color:red"></span>*@
             </td>
         </tr>
     </table>

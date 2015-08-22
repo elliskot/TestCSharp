@@ -12,12 +12,14 @@ namespace TestCSharp.Controllers
         private Repositories.ArticoloRepository _oArticoloRepo;
         private Repositories.MagazzinoRepository _oMagazzinoRepo;
         private Repositories.MovimentoRepository _oMovimentoRepo;
+        private Repositories.CausaleRepository _oCausaleRepo;
 
         public MovimentoController() : base()
         {
             _oArticoloRepo = new Repositories.ArticoloRepository(this.DatabaseFactory);
             _oMagazzinoRepo = new Repositories.MagazzinoRepository(this.DatabaseFactory);
             _oMovimentoRepo = new Repositories.MovimentoRepository(this.DatabaseFactory);
+            _oCausaleRepo = new Repositories.CausaleRepository(this.DatabaseFactory);
         }
 
         public ActionResult Index()
@@ -42,6 +44,7 @@ namespace TestCSharp.Controllers
                 ViewBag.Articoli = _oArticoloRepo.GetAllSimpleList();
             }
             ViewBag.Magazzini = _oMagazzinoRepo.GetAllSimpleList();
+            ViewBag.Causali = _oCausaleRepo.GetAllSimpleList();
 
             return View(model);
         }
