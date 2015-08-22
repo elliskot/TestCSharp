@@ -47,7 +47,7 @@
             <a href="~/Articolo/Edit?ID=@item.ID&BackUrl=/Articolo" title="Modifica">Modifica</a>
             <a href="~/Movimento/Create?ArticoloID=@item.ID&BackUrl=/Articolo" title="Movimenta Articolo">Movimenta Articolo</a>
 @if(item.Movimenti.Count > 0) {
-            <strong>Esporta elenco completo:</strong>
+            <strong>Esporta elenco movimenti:</strong>
             <a href="~/Export/MovimentiJson?ArticoloID=@item.ID&BackUrl=/Articolo" title="Esporta JSON">JSON</a>
             <a href="~/Export/MovimentiCsv?ArticoloID=@item.ID&CodiceArticolo=@item.Codice&BackUrl=/Articolo" title="Esporta CSV">CSV</a>
 }

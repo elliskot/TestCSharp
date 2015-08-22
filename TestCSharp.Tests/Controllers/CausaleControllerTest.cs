@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -87,6 +88,14 @@ namespace TestCSharp.Tests.Controllers
                         
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
+
+            var vc = new ValidationContext(oCausale, null, null) { MemberName = "Descrizione" };
+            var validationResults = new List<ValidationResult>();
+
+            // Validate the whole Customer entity.
+            bool isValidCausale = Validator.TryValidateObject(oCausale, vc, validationResults, true);
+            Assert.IsFalse(isValidCausale);
+
             RedirectToRouteResult routeResult = result as RedirectToRouteResult;
             Assert.AreEqual(routeResult.RouteValues["action"], "Create");            
         }
@@ -120,6 +129,14 @@ namespace TestCSharp.Tests.Controllers
 
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
+
+            var vc = new ValidationContext(oCausale, null, null) { MemberName = "Descrizione" };
+            var validationResults = new List<ValidationResult>();
+
+            // Validate the whole Customer entity.
+            bool isValidCausale = Validator.TryValidateObject(oCausale, vc, validationResults, true);
+            Assert.IsFalse(isValidCausale);
+
             RedirectToRouteResult routeResult = result as RedirectToRouteResult;
             Assert.AreEqual(routeResult.RouteValues["action"], "Edit");
         }
@@ -131,14 +148,26 @@ namespace TestCSharp.Tests.Controllers
             var controller = new CausaleController(new InMemoryCausaleRepository());
 
             controller.ModelState.AddModelError("", "error message");
-            Causale oCausale = GetCausale(1, "");
+            Causale oCausale = GetCausale(1, ""); 
 
             // Act
             var result = controller.Delete(oCausale);
-
+            
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
-            RedirectToRouteResult routeResult = result as RedirectToRouteResult;
+
+            var vc = new ValidationContext(oCausale, null, null) { MemberName = "Descrizione" };
+            var validationResults = new List<ValidationResult>();
+
+            // Validate only the zip code.
+            bool isValidDescrizione = Validator.TryValidateProperty(oCausale.Descrizione, vc, validationResults);
+            Assert.IsFalse(isValidDescrizione);
+
+            // Validate the whole Customer entity.
+            bool isValidCausale = Validator.TryValidateObject(oCausale, vc, validationResults, true);
+            Assert.IsFalse(isValidCausale);
+
+            RedirectToRouteResult routeResult = result as RedirectToRouteResult; 
             Assert.AreEqual(routeResult.RouteValues["action"], "Index"); 
         }
 
