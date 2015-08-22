@@ -12,6 +12,7 @@ using TestCSharp.Controllers;
 using TestCSharp.Models;
 using TestCSharp.Repositories;
 using TestCSharp.Tests.Models;
+using TestCSharp.WebSite.Base.ViewModels.Views;
 //using TestCSharp.Tests.Models;
 
 namespace TestCSharp.Tests.Controllers
@@ -20,7 +21,7 @@ namespace TestCSharp.Tests.Controllers
     public class ExportControllerTest
     {
         [TestMethod]
-        public void CausaliJson_CheckIfResultIsNotNull()
+        public void CausaliJson_CheckIfResultIsNotNullAndValid()
         {
             InizializeContext();
 
@@ -36,6 +37,9 @@ namespace TestCSharp.Tests.Controllers
 
             //AssertCreate
             Assert.IsNotNull(result);
+
+            bool testValue = isValidJSON(result);
+            Assert.IsTrue(testValue);
         }
         [TestMethod]
         public void CausaliCSV_CheckIfResultIsNotNull()
@@ -53,7 +57,8 @@ namespace TestCSharp.Tests.Controllers
             var result = controller.CausaliCsv();
 
             //AssertCreate
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(result); 
+            Assert.IsNotNull(result.FileStream);
         }
 
         private Causale GetCausale(int ID, string Descrizione)
@@ -73,11 +78,11 @@ namespace TestCSharp.Tests.Controllers
             HttpContext.Current = httpContext;
         }
 
-        public bool isValidJSON(String json)
+        public bool isValidJSON(JsonResult jsonResult)
         {
             try
             {
-                JToken token = JObject.Parse(json);
+                var c = (List<CausaleExport>)jsonResult.Data;
                 return true;
             }
             catch (Exception)
