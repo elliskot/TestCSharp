@@ -1,3 +1,4 @@
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\obj\Debug\TestCSharp.Repositories.csprojResolveAssemblyReference.cache
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\TestCSharp.Repositories.dll.config
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\TestCSharp.Repositories.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\TestCSharp.Repositories.pdb
@@ -14,6 +15,5 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\EntityFram
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\EntityFramework.SqlServerCompact.xml
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\it\EntityFramework.resources.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\bin\Debug\it\EntityFramework.SqlServer.resources.dll
-E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\obj\Debug\TestCSharp.Repositories.csprojResolveAssemblyReference.cache
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\obj\Debug\TestCSharp.Repositories.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.Repositories\obj\Debug\TestCSharp.Repositories.pdb

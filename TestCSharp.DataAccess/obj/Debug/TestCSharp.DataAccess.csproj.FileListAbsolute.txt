@@ -1,3 +1,4 @@
+E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\obj\Debug\TestCSharp.DataAccess.csprojResolveAssemblyReference.cache
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\TestCSharp.DataAccess.dll.config
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\TestCSharp.DataAccess.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\TestCSharp.DataAccess.pdb
@@ -12,6 +13,5 @@ E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\EntityFramew
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\EntityFramework.SqlServerCompact.xml
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\it\EntityFramework.resources.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\bin\Debug\it\EntityFramework.SqlServer.resources.dll
-E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\obj\Debug\TestCSharp.DataAccess.csprojResolveAssemblyReference.cache
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\obj\Debug\TestCSharp.DataAccess.dll
 E:\Projects\Sysdata-Test\TestCSharp\TestCSharp.DataAccess\obj\Debug\TestCSharp.DataAccess.pdb
