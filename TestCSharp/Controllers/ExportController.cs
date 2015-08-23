@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestCSharp.Models;
+using TestCSharp.Repositories;
 using TestCSharp.WebSite.Base.ViewModels.Views;
 
 namespace TestCSharp.Controllers
@@ -13,13 +14,20 @@ namespace TestCSharp.Controllers
         private Repositories.ArticoloRepository _oArticoloRepo;
         private Repositories.MagazzinoRepository _oMagazzinoRepo;
         private Repositories.MovimentoRepository _oMovimentoRepo;
-        private Repositories.CausaleRepository _oCausaleRepo;
+        private ICausaleRepository _oCausaleRepo;
 
         public ExportController() : base() {
             _oArticoloRepo = new Repositories.ArticoloRepository(this.DatabaseFactory);
             _oMagazzinoRepo = new Repositories.MagazzinoRepository(this.DatabaseFactory);
             _oMovimentoRepo = new Repositories.MovimentoRepository(this.DatabaseFactory);
             _oCausaleRepo = new Repositories.CausaleRepository(this.DatabaseFactory);
+        }
+        public ExportController(ICausaleRepository repository) : base()
+        {
+            _oArticoloRepo = new Repositories.ArticoloRepository(this.DatabaseFactory);
+            _oMagazzinoRepo = new Repositories.MagazzinoRepository(this.DatabaseFactory);
+            _oMovimentoRepo = new Repositories.MovimentoRepository(this.DatabaseFactory);
+            _oCausaleRepo = repository;
         }
 
         public JsonResult ArticoliJson()

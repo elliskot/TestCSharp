@@ -18,7 +18,7 @@ namespace TestCSharp.Repositories
         {
         }
 
-        public IQueryable<Causale> GetAll()
+        public override IQueryable<Causale> GetAll()
         {
             IQueryable<Causale> oQueryable = DataContext.Causali
                 .Include(m => m.Movimenti);
@@ -26,7 +26,7 @@ namespace TestCSharp.Repositories
             return oQueryable;
         }
 
-        public IQueryable<Causale> GetAllSimpleList()
+        public override IQueryable<Causale> GetAllSimpleList()
         {
             IQueryable<Causale> oQueryable = DataContext.Causali;
 

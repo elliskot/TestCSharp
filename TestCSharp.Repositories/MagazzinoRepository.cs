@@ -18,7 +18,7 @@ namespace TestCSharp.Repositories
         {
         }
 
-        public IQueryable<Magazzino> GetAll()
+        public override IQueryable<Magazzino> GetAll()
         {
             IQueryable<Magazzino> oQueryable = DataContext.Magazzini
                 .Include(m => m.MovimentiP);
@@ -26,7 +26,7 @@ namespace TestCSharp.Repositories
             return oQueryable;
         }
 
-        public IQueryable<Magazzino> GetAllSimpleList()
+        public override IQueryable<Magazzino> GetAllSimpleList()
         {
             IQueryable<Magazzino> oQueryable = DataContext.Magazzini;
 

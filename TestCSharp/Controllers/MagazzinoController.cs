@@ -9,9 +9,9 @@ namespace TestCSharp.Controllers
 {
     public class MagazzinoController : TestCSharp.WebSite.Base.Controllers.WebsiteContextController
     {
-        private Repositories.ArticoloRepository _oArticoloRepo;
+        //private Repositories.ArticoloRepository _oArticoloRepo;
         private Repositories.MagazzinoRepository _oMagazzinoRepo;
-        private Repositories.MovimentoRepository _oMovimentoRepo;
+        //private Repositories.MovimentoRepository _oMovimentoRepo;
 
         public MagazzinoController() : base()
         {
@@ -35,7 +35,6 @@ namespace TestCSharp.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 _oMagazzinoRepo.Add(model);
                 this.DatabaseFactory.GetContext().SaveChanges();
 
@@ -68,9 +67,10 @@ namespace TestCSharp.Controllers
                 Magazzino oMagazzino = _oMagazzinoRepo.GetEdit().SingleOrDefault(x => x.ID == model.ID);
                 if (oMagazzino != null)
                     _oMagazzinoRepo.Delete(oMagazzino);
-            }
 
-            this.DatabaseFactory.GetContext().SaveChanges();
+                this.DatabaseFactory.GetContext().SaveChanges();
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
     }

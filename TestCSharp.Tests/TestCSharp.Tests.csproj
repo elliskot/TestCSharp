@@ -106,6 +106,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CausaleControllerTest.cs" />
+    <Compile Include="Controllers\ExportControllerTest.cs" />
+    <Compile Include="Models\InMemoryCausaleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +118,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestCSharp.DataAccess\TestCSharp.DataAccess.csproj">
+      <Project>{26176ff1-40a1-4012-b513-6ad989521077}</Project>
+      <Name>TestCSharp.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCSharp.Models\TestCSharp.Models.csproj">
+      <Project>{4b5ef31b-4806-4355-b08d-6fab663d47dd}</Project>
+      <Name>TestCSharp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCSharp.Repositories\TestCSharp.Repositories.csproj">
+      <Project>{e4a056fb-39ee-45c5-92f4-13815d70aa51}</Project>
+      <Name>TestCSharp.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestCSharp.WebSite.Base\TestCSharp.WebSite.Base.csproj">
+      <Project>{d9c84dd0-4393-40ce-99dc-4540a0705a46}</Project>
+      <Name>TestCSharp.WebSite.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestCSharp\TestCSharp.WebSite.csproj">
       <Project>{92A65263-EAA8-4D8A-BE93-7B3A6126A542}</Project>
       <Name>TestCSharp.WebSite</Name>

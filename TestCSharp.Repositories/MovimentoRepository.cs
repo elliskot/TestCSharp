@@ -18,17 +18,18 @@ namespace TestCSharp.Repositories
         {
         }
 
-        public IQueryable<Movimento> GetAll()
+        public override IQueryable<Movimento> GetAll()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti
                 .Include(m => m.Articolo)
                 .Include(m => m.Partenza)
-                .Include(m => m.Destinazione);
+                .Include(m => m.Destinazione)
+                .Include(m => m.Causale);
 
             return oQueryable;
         }
 
-        public IQueryable<Movimento> GetAllSimpleList()
+        public override IQueryable<Movimento> GetAllSimpleList()
         {
             IQueryable<Movimento> oQueryable = DataContext.Movimenti;
 
